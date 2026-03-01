@@ -1,34 +1,37 @@
-# 📈 Türkiye Turizm Gelirleri ve GSYİH İlişkisi Analizi (2012-2024)
+# 📈 Türkiye Turizm Gelirleri ve Ekonomik Büyüme (GSYİH) Analizi (2012-2024)
 
-Bu çalışma, Türkiye ekonomisinin en kritik sektörlerinden biri olan turizmin, ekonomik büyüme (GSYİH) üzerindeki etkisini ekonometrik zaman serisi yöntemleriyle analiz etmektedir.
+Bu proje, Türkiye ekonomisinde stratejik öneme sahip olan turizm sektörü ile ekonomik büyüme (GSYİH) arasındaki ilişkiyi ekonometrik zaman serisi yöntemleriyle analiz etmektedir. Proje, verilerin işlenmesinden ekonometrik modelleme aşamasına kadar uçtan uca bir veri analizi sürecini kapsamaktadır.
 
-## 🎯 Proje Özeti
-Proje, 2012-2024 dönemine ait verileri kullanarak turizm gelirlerinin makroekonomik büyüme ile olan bağını **ARDL (Autoregressive Distributed Lag)** modeli üzerinden incelemektedir. Analiz süreci; veri temizleme, durağanlık testleri, modelleme ve sonuçların yorumlanması aşamalarından oluşmaktadır.
+## 🎯 Projenin Amacı
+Turizm gelirlerinin uzun dönemli ekonomik büyüme üzerindeki etkisini kantitatif olarak ölçmek ve değişkenler arasındaki dinamik ilişkiyi **ARDL (Autoregressive Distributed Lag)** modeli ile ortaya koymaktır.
 
 ## 🛠 Kullanılan Teknolojiler & İstatistiksel Yöntemler
 - **Programlama Dili:** R
 - **Kütüphaneler:** `tidyverse`, `ggplot2`, `dynlm`, `urca`, `tseries`
 - **Metodoloji:**
-  - **Durağanlık Analizi:** ADF ve PP testleri ile serilerin I(1) seviyesinde durağanlaştığı saptanmıştır.
+  - **Durağanlık Analizi:** ADF (Augmented Dickey-Fuller) ve PP (Phillips-Perron) testleri ile serilerin durağanlık seviyeleri test edilmiştir.
   - **Modelleme:** Kısa ve uzun dönem ilişkileri için ARDL ve Hata Düzeltme Modeli (ECM).
-  - **Görselleştirme:** Trend analizleri ve Korelasyon matrisleri.
+  - **Görselleştirme:** Alan grafikleri, zaman serisi trend analizleri ve korelasyon ısı haritaları.
 
 ## 📊 Öne Çıkan Bulgular
-- **Korelasyon:** Turizm gelirleri ile ziyaretçi sayısı arasında %90'ın üzerinde pozitif korelasyon gözlemlenmiştir.
-- **Model Çıktısı:** Kurulan model, turizm gelirlerindeki değişimin yaklaşık **%31'ini** açıklama kapasitesine sahiptir.
-- **Eşbütünleşme:** Değişkenlerin uzun dönemde birlikte hareket ettiği (Cointegration) istatistiksel olarak kanıtlanmıştır.
+1.  **Durağanlık:** Serilerin seviyede durağan olmadığı, ancak birinci farklarında [I(1)] durağanlaştığı saptanmıştır.
+2.  **Eşbütünleşme:** Turizm gelirleri ile GSYİH arasında uzun dönemli bir ilişki (**Cointegration**) tespit edilmiştir.
+3.  **Model Başarısı:** Kurulan model, turizm gelirlerindeki değişimin yaklaşık **%31'ini** açıklama kapasitesine sahiptir.
 
 ## 🖼️ Analiz Görselleri
-Aşağıda analiz sürecinde elde edilen temel grafiklerden örnekler yer almaktadır:
+Aşağıda analiz sürecinde elde edilen temel bulgular yer almaktadır:
 
-### Turizm Geliri Trendi (2012-2024)
-![Turizm Trendi](outputs/tourism_trend.png)
+### 1. Turizm Geliri Trend Analizi (2012-2024)
+![Turizm Trendi](outputs/tourism_income_area_chart.png)
 
-### Değişkenler Arası Korelasyon Matrisi
-![Korelasyon Matrisi](outputs/correlation_matrix.png)
+### 2. Değişkenler Arası Korelasyon Matrisi
+![Korelasyon Matrisi](outputs/correlation_heatmap.png)
+
+### 3. Türkiye GSYİH Zaman Serisi Analizi
+![GDP Zaman Serisi](outputs/gdp_trend_analysis.png)
 
 ## 📂 Dosya Yapısı
-- `/scripts`: R analiz kodları (`analysis.R`).
-- `/data`: Ham veri setleri (Gelir, Gider, GDP CSV dosyaları).
-- `/outputs`: Analizden elde edilen grafikler (.png).
-- `/report`: Projenin detaylı akademik raporu (PDF formatında).
+- `/scripts`: Analiz sürecini içeren R kodları 
+- `/data`: Kullanılan ham veri setleri 
+- `/outputs`: Analizden elde edilen görsel çıktıları 
+- `/report`: Projenin detaylı akademik raporu 
